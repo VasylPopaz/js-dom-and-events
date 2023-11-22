@@ -15,6 +15,7 @@ const createBoxes = amount => {
     const item = document.createElement('div');
     item.style.width = `${elementWidth}px`;
     item.style.height = `${elementHeight}px`;
+    item.style.marginBottom = `5px`;
     item.style.backgroundColor = getRandomHexColor();
     divBoxes.append(item);
     elementWidth += 10;
