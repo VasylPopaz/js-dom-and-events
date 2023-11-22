@@ -24,6 +24,13 @@ const createBoxes = amount => {
   textInput.value = 0;
 };
 
+const destroyBoxes = () => {
+  const boxesItems = document.querySelectorAll('#boxes div');
+  boxesItems.forEach(item => {
+    item.remove();
+  });
+};
+
 createButton.addEventListener('click', () => {
   const count = Number(textInput.value);
   if (Number(count) < 1) {
@@ -34,8 +41,5 @@ createButton.addEventListener('click', () => {
 });
 
 destroyButton.addEventListener('click', () => {
-  const boxesItems = document.querySelectorAll('#boxes div');
-  boxesItems.forEach(item => {
-    item.remove();
-  });
+  destroyBoxes();
 });
