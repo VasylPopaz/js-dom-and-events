@@ -24,12 +24,7 @@ const createBoxes = amount => {
   textInput.value = 0;
 };
 
-const destroyBoxes = () => {
-  const boxesItems = document.querySelectorAll('#boxes div');
-  boxesItems.forEach(item => {
-    item.remove();
-  });
-};
+const destroyBoxes = () => (divBoxes.innerHTML = '');
 
 createButton.addEventListener('click', () => {
   const count = Number(textInput.value);
