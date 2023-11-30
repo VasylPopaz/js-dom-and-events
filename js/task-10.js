@@ -7,24 +7,20 @@ const textInput = document.querySelector('input');
 const divBoxes = document.querySelector('#boxes');
 const createButton = document.querySelector('[data-create]');
 const destroyButton = document.querySelector('[data-destroy]');
-
+let size = 20;
 const createBoxes = amount => {
-  let elementWidth = 30;
-  let elementHeight = 30;
-  for (let i = 0; i < textInput.value; i += 1) {
-    const item = document.createElement('div');
-    item.style.width = `${elementWidth}px`;
-    item.style.height = `${elementHeight}px`;
-    item.style.marginBottom = `5px`;
-    item.style.backgroundColor = getRandomHexColor();
-    divBoxes.append(item);
-    elementWidth += 10;
-    elementHeight += 10;
+  for (let i = 0; i < amount; i += 1) {
+    size += 10;
+    const item = `<div style="width:${size}px;height:${size}px;margin:5px; background-color:${getRandomHexColor()};"></div>`;
+    divBoxes.insertAdjacentHTML('beforeend', item);
   }
   textInput.value = 0;
 };
 
-const destroyBoxes = () => (divBoxes.innerHTML = '');
+const destroyBoxes = () => {
+  divBoxes.innerHTML = '';
+  size = 20;
+};
 
 createButton.addEventListener('click', () => {
   const count = Number(textInput.value);

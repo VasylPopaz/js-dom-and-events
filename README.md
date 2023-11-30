@@ -1,1 +1,1 @@
-# goit-js-hw-06
+# js-dom-and-events
